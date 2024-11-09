@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailing Template NMC</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/img/psn-logo.jpeg">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="iconSidebar">  
+            <a href="/dashboard">
+                <img src="/img/psn-logo.jpeg" alt="PSN Logo" class="logo"> 
+            </a> 
+        </div>
+
+        <!-- Customer Care dropdown -->
+        <div class="dropdown">
+            <a href="#" onclick="toggleSubmenu(event, 'customerCareSubmenu')">
+                <i class="fas fa-users"></i> Customer Care
+            </a>
+            <ul class="submenu" id="customerCareSubmenu">
+                <li><a href="/cc/sun">Sun Outage</a></li>
+                <li><a href="/cc/maintenance">Maintenance</a></li>
+            </ul>
+        </div>
+
+        <!-- NMC O&M dropdown -->
+        <div class="dropdown">
+            <a href="#" onclick="toggleSubmenu(event, 'nmcSubmenu')">
+                <i class="fas fa-tachometer-alt"></i> NMC O&M
+            </a>
+            <ul class="submenu" id="nmcSubmenu">
+                <li><a href="/no/sun">Sun Outage</a></li>
+            </ul>
+        </div>
+
+        <!-- User profile section with dropdown for logout -->
+        <div class="user-profile" onclick="toggleDropdown()">
+            <img src="https://storage.googleapis.com/a1aa/image/I2pH1H802F5XNxUjbVEdTYb7BeOLsYbIf3QcYaV1GVPZW6nTA.jpg" alt="User profile picture" class="profile-picture">
+            <span class="username"><%= username %></span>
+            <i class="fas fa-caret-down"></i> 
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="/login/logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>NMC O&M - Sun Outage</h1>
+        <p>This page contains information about Sun Outage specific to the NMC O&M department.</p>
+    </div>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #ebf1f5;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+}
+
+.iconSidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+}
+
+
+
+.iconSidebar .logo {
+    width: 100px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.sidebar .dropdown a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    gap: 5px;
+}
+
+.sidebar .dropdown a:hover {
+    background-color: #444444;
+}
+
+.submenu {
+    display: none;
+    padding-left: 30px;
+    list-style:none;
+}
+
+.submenu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.submenu li a:hover {
+    color: #bbbbbb;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px;
+    overflow-y: auto;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: auto;
+    margin-left: 20px;
+    padding: 10px;
+    color: white;
+}
+
+.user-profile i {
+    margin-left: 5px; /* Jarak antara username dan ikon segitiga */
+}
+
+.user-profile .profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.user-profile .username {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+    background-color: #2d5072;
+    padding: 1px;
+    border-radius: 1px;
+}
+
+.dropdown-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    background-color: #818181;
+}
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+/* User profile container styling */
+.user-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  position: relative;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username {
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Styling for the logout popup */
+.logout-popup {
+  display: none;
+  position: fixed;
+  top: 100px; /* Adjust positioning based on layout */
+  right: 10px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logout-popup a {
+  color: #076b14;
+  text-decoration: none;
+}
+
+/* Menu styling */
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  margin: 15px 0;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.submenu {
+  list-style: none;
+  margin-left: 15px;
+}
+
+.submenu li a {
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* Content styling */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex: 1;
+}
+
+header {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "mailing-template",
+  "version": "1.0.0",
+  "description": "mailing template nmc",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchwalfajar/mailing-template.git"
+  },
+  "keywords": [
+    "template",
+    "email",
+    "nomor",
+    "surat"
+  ],
+  "author": "mchwalfajar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mchwalfajar/mailing-template/issues"
+  },
+  "homepage": "https://github.com/mchwalfajar/mailing-template#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "mysql2": "^3.11.3"
+  }
+}
