@@ -218,6 +218,12 @@ body {
   flex: 1;
 }
 
+.card-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+}
+
 header {
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
