@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { format } = require('date-fns');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/auth');
@@ -37,7 +38,23 @@ const checkAuth = (req, res, next) => {
 app.use('/login', authRoutes);
 
 app.get('/dashboard', checkAuth, (req, res) => {
-    res.render('home', { username: req.session.username });
+    db.query('SELECT * FROM nomor_surat', (err, results) => {
+        if (err) {
+            console.error('Database query error:', err);
+            return res.status(500).send('Database error');
+        }
+
+        // Format 'tanggal' before sending to EJS
+        const formattedResults = results.map(row => ({
+            ...row,
+            tanggal: format(new Date(row.tanggal), 'dd/MM/yyyy HH:mm')
+        }));
+
+        res.render('home', {
+            username: req.session.username,
+            suratData: formattedResults
+        });
+    });
 });
 
 app.get('/cc/sun', checkAuth, (req, res) => {
@@ -52,5 +69,6 @@ app.get('/no/sun', checkAuth, (req, res) => {
     res.render('sunOutageNO', { username: req.session.username });
 });
 
+
 // Start server
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/dashboard`));
