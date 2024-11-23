@@ -32,6 +32,7 @@ router.post('/', (req, res) => {
     });
 });
 
+
 // Logout route
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => {
@@ -46,5 +47,5 @@ router.get('/logout', (req, res) => {
 
 module.exports = router;
 
-
+  
 

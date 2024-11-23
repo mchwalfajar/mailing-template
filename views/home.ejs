@@ -21,21 +21,21 @@
         <!-- Customer Care dropdown -->
         <div class="dropdown">
             <a href="#" onclick="toggleSubmenu(event, 'customerCareSubmenu')">
-                <i class="fas fa-users"></i> Customer Care
+                <i class="fas fa-users"></i> <b>Customer Care</b>
             </a>
             <ul class="submenu" id="customerCareSubmenu">
-                <li><a href="/cc/sun">Sun Outage</a></li>
-                <li><a href="/cc/maintenance">Maintenance</a></li>
+                <li><a href="/cc/sun"><b>Sun Outage</b></a></li>
+                <li><a href="/cc/maintenance"><b>Maintenance</b></a></li>
             </ul>
         </div>
 
         <!-- NMC O&M dropdown -->
         <div class="dropdown">
             <a href="#" onclick="toggleSubmenu(event, 'nmcSubmenu')">
-                <i class="fas fa-tachometer-alt"></i> NMC O&M
+                <i class="fas fa-tachometer-alt"></i> <b>NMC O&M</b>
             </a>
             <ul class="submenu" id="nmcSubmenu">
-                <li><a href="/no/sun">Sun Outage</a></li>
+                <li><a href="/no/sun"><b>Sun Outage</b></a></li>
             </ul>
         </div>
 
@@ -51,41 +51,36 @@
     </div>
 
     <div class="content">
-        <h1>Welcome to Mailing Template NMC</h1>
-        <p>Akan ditampilkan email yang sudah dikirim, namun hanya judul dan nomor surat</p>
+        <h1>Hello <b><%= username %>, </b> welcome to mailing template NMC</h1><br>
 
-        <div class="card-group">
-            <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-          </div>
+        <% if (suratData.length > 0) { %>
+            <table class="table table-stripped>"
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Kode</th>
+                        <th>Agen</th>
+                        <th>Tanggal</th>
+                        <th>Keterangan</th>
+                        <th>Penerima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% suratData.forEach(function(row) { %>
+                        <tr>
+                            <td><%= row.id %></td>
+                            <td><%= row.kode %></td>
+                            <td><%= row.agen %></td>
+                            <td><%= row.tanggal %> WIB</td>
+                            <td><%= row.ket %></td>
+                            <td><%= row.penerima %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>No data available.</p>
+        <% } %>
     </div>
 
     <script src="/js/script.js"></script>
