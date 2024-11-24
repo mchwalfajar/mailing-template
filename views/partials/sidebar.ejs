@@ -1,0 +1,38 @@
+<div class="sidebar">
+    <div class="iconSidebar">  
+        <a href="/dashboard">
+            <img src="/img/psn-logo.jpeg" alt="PSN Logo" class="logo"> 
+        </a> 
+    </div>
+
+    <!-- Customer Care dropdown -->
+    <div class="dropdown">
+        <a href="#" onclick="toggleSubmenu(event, 'customerCareSubmenu')">
+            <i class="fas fa-users"></i> <b>Customer Care</b>
+        </a>
+        <ul class="submenu" id="customerCareSubmenu">
+            <li><a href="/cc/sun"><b>Sun Outage</b></a></li>
+            <li><a href="/cc/maintenance"><b>Maintenance</b></a></li>
+        </ul>
+    </div>
+
+    <!-- NMC O&M dropdown -->
+    <div class="dropdown">
+        <a href="#" onclick="toggleSubmenu(event, 'nmcSubmenu')">
+            <i class="fas fa-tachometer-alt"></i> <b>NMC O&M</b>
+        </a>
+        <ul class="submenu" id="nmcSubmenu">
+            <li><a href="/no/sun"><b>Sun Outage</b></a></li>
+        </ul>
+    </div>
+
+    <!-- User profile section with dropdown for logout -->
+    <div class="user-profile" onclick="toggleDropdown()">
+        <img src="https://storage.googleapis.com/a1aa/image/I2pH1H802F5XNxUjbVEdTYb7BeOLsYbIf3QcYaV1GVPZW6nTA.jpg" alt="User profile picture" class="profile-picture">
+        <span class="username"><%= username %></span>
+        <i class="fas fa-caret-down"></i> 
+        <ul class="dropdown-menu" id="dropdownMenu">
+            <li><a href="/login/logout">Logout</a></li>
+        </ul>
+    </div>
+</div>

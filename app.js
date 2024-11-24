@@ -69,6 +69,11 @@ app.get('/no/sun', checkAuth, (req, res) => {
     res.render('sunOutageNO', { username: req.session.username });
 });
 
+// send mail
+app.get('/cc/sun/bmkg', checkAuth, (req, res) => {
+    res.render('bmkg-sunCS', { username: req.session.username });
+});
+
 
 // Start server
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}/dashboard`));
